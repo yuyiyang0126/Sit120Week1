@@ -1,0 +1,46 @@
+
+<html>
+<head>
+    <title>Vue todo list</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="Vue.css">
+</head>
+<body>
+
+
+    <h1>Todo List</h1>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/41da3NERJ4L.png" alt="check">
+    <div class="topnav">
+        <topnav><a href="./week1 task1.html">Home</a></li>
+        <topnav><a href="./Vue.html">Vue</a></li>
+        <topnav><a href="./student score.html">Student score</a></li>  
+        <topnav><a href="./contact.html">Contact Us</a></li>
+    </div>
+    <div id="todo-list">
+  <form v-on:submit.prevent="addNewTodo">
+    <label for="new-todo">Add a todo  </label>
+    <input
+      v-model="newTodoText"
+      id="new-todo"
+      placeholder="E.g. Shopping"
+    >
+    <button>Add</button>
+  </form>
+  <ul>
+    <li
+      is="todo-item"
+      v-for="(todo, index) in todos"
+      v-bind:key="todo.id"
+      v-bind:title="todo.title"
+      v-on:remove="todos.splice(index, 1)"
+    ></li>
+    <script src="Vue.js"></script>
+    
+
+
+
+        
+</body>
+</html>
+    
+  
